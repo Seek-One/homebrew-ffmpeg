@@ -26,5 +26,5 @@ Usage :
 ```
 brew tap seek-one/ffmpeg
 brew options seek-one/ffmpeg/ffmpeg
-brew install seek-one/ffmpeg/ffmpeg --with-fdk-aac --with-ass --with-freetype --with-harfbuzz --with-openh264 --with-vpx
+brew install seek-one/ffmpeg/ffmpeg --with-fdk-aac --with-libass --with-freetype --with-harfbuzz --with-openh264 --with-libvpx
 ```
