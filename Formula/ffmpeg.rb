@@ -65,4 +65,5 @@ class Ffmpeg < Formula
     else
       system "make", "install"
     end
+  end
 end
