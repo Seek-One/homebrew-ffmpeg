@@ -7,13 +7,13 @@ class Ffmpeg < Formula
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   option "with-fdk-aac", "Enable the Fraunhofer FDK AAC library"
-  option "with-ass", "Enable ASS library"
+  option "with-libass", "Enable libass library"
   option "with-freetype", "Enable freetype library"
   option "with-harfbuzz", "Enable harfbuzz library"
   option "with-openh264", "Enable OpenH264 library"
   option "with-x264", "Enable x264 library"
   option "with-x265", "Enable x265 library"
-  option "with-vpx", "Enable x265 library"
+  option "with-libvpx", "Enable libvpx library"
 
   depends_on "pkgconf" => :build
 
@@ -48,13 +48,13 @@ class Ffmpeg < Formula
 
     args << "--disable-htmlpages" # The same info is accessible through the man pages.
     args << "--enable-libfdk-aac" if build.with? "fdk-aac"
-    args << "--enable-libass" if build.with? "ass"
+    args << "--enable-libass" if build.with? "libass"
     args << "--enable-freetype" if build.with? "freetype"
     args << "--enable-harfbuzz" if build.with? "harfbuzz"
     args << "--enable-libopenh264" if build.with? "openh264"
     args << "--enable-libx264" if build.with? "x264"
     args << "--enable-libx265" if build.with? "x265"
-    args << "--enable-libvpx" if build.with? "vpx"
+    args << "--enable-libvpx" if build.with? "libvpx"
 
     system "./configure", *args
     if build.with? "alt-name"
