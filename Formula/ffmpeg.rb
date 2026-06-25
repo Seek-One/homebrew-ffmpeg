@@ -42,6 +42,7 @@ class Ffmpeg < Formula
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
       --enable-libfontconfig
+      --disable-mediafoundation
     ]
 
     args << "--enable-neon" if Hardware::CPU.arm?
@@ -49,8 +50,8 @@ class Ffmpeg < Formula
     args << "--disable-htmlpages" # The same info is accessible through the man pages.
     args << "--enable-libfdk-aac" if build.with? "fdk-aac"
     args << "--enable-libass" if build.with? "libass"
-    args << "--enable-freetype" if build.with? "freetype"
-    args << "--enable-harfbuzz" if build.with? "harfbuzz"
+    args << "--enable-libfreetype --enable-zlib --extra-libs=-lpng" if build.with? "freetype"
+    args << "--enable-libharfbuzz" if build.with? "harfbuzz"
     args << "--enable-libopenh264" if build.with? "openh264"
     args << "--enable-libx264" if build.with? "x264"
     args << "--enable-libx265" if build.with? "x265"
