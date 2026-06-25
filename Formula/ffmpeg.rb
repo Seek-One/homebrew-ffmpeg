@@ -50,7 +50,7 @@ class Ffmpeg < Formula
     args << "--disable-htmlpages" # The same info is accessible through the man pages.
     args << "--enable-libfdk-aac" if build.with? "fdk-aac"
     args << "--enable-libass" if build.with? "libass"
-    args << "--enable-libfreetype --enable-zlib --extra-libs=-lpng" if build.with? "freetype"
+    args << "--enable-libfreetype" if build.with? "freetype"
     args << "--enable-libharfbuzz" if build.with? "harfbuzz"
     args << "--enable-libopenh264" if build.with? "openh264"
     args << "--enable-libx264" if build.with? "x264"
